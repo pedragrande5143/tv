@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RESET E CONFIGURAÇÕES GERAIS (Otimizado para Widescreen 1920x1080)
+   RESET E CONFIGURAÇÕES GERAIS
    ========================================================================== */
 * {
     margin: 0;
@@ -9,21 +9,21 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #F7F7F5; /* Off-white de fundo */
-    color: #676767; /* Cinza corporativo */
+    background-color: #F7F7F5;
+    color: #676767;
     height: 100vh;
     overflow: hidden;
     display: grid;
-    grid-template-rows: 150px 1fr 35px; /* Alturas exatas e estáticas para TV */
+    grid-template-rows: 150px 1fr 35px; /* Altura exata para TV */
 }
 
 /* ==========================================================================
-   CABEÇALHO (Estilo Premium AAA)
+   CABEÇALHO
    ========================================================================== */
 .app-header {
     background-color: #FFFFFF;
-    border-bottom: 3px solid #C9A66B; /* Linha inferior dourada */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Sombra extremamente discreta */
+    border-bottom: 3px solid #C9A66B;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,12 +31,12 @@ body {
     z-index: 10;
 }
 
-/* Lado Esquerdo: Identificação */
+/* Reduzido levemente de 26px para 22px para acomodar o nome maior na mesma linha */
 .header-left h1 {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
-    color: #445245; /* Verde sofisticado */
-    letter-spacing: 2px;
+    color: #445245;
+    letter-spacing: 1.5px;
     margin-bottom: 4px;
 }
 
@@ -48,7 +48,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Centro: Saudação dinamicamente gerada */
 .header-center {
     font-size: 24px;
     font-weight: 300;
@@ -57,7 +56,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Lado Direito: Data, Hora e Clima */
 .header-right {
     display: flex;
     align-items: center;
@@ -83,7 +81,7 @@ body {
     color: #676767;
 }
 
-/* Clima e Previsão */
+/* Clima */
 .weather-container {
     display: flex;
     align-items: center;
@@ -113,7 +111,7 @@ body {
 .forecast-day .day-name {
     font-weight: 600;
     text-transform: uppercase;
-    color: #C9A66B; /* Dourado para os dias da previsão */
+    color: #C9A66B;
 }
 
 .forecast-day .day-temps {
@@ -123,7 +121,7 @@ body {
 }
 
 /* ==========================================================================
-   CORPO DO PAINEL (Iframe Google Slides)
+   CORPO (Iframe)
    ========================================================================== */
 .app-main {
     width: 100%;
@@ -141,41 +139,22 @@ body {
 }
 
 /* ==========================================================================
-   RODAPÉ (Ticker Discreto de Notícias contínuas)
+   RODAPÉ (Design Estático, Limpo e Centralizado)
    ========================================================================== */
 .app-footer {
     background-color: #FFFFFF;
     border-top: 1px solid #EAEAEA;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    justify-content: center; /* Centraliza as mensagens institucionais */
     height: 35px;
+    padding: 0 20px;
 }
 
-.ticker-wrapper {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-}
-
-#ticker-content {
-    display: inline-block;
-    padding-left: 100%;
+.footer-text {
     font-size: 13px;
     font-weight: 400;
     color: #676767;
     letter-spacing: 0.5px;
-    animation: ticker-scroll 35s linear infinite;
-}
-
-/* Animação CSS pura e leve para TVs antigas */
-@keyframes ticker-scroll {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
+    text-align: center;
 }

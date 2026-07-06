@@ -3,26 +3,23 @@
  */
 document.addEventListener("DOMContentLoaded", function () {
     initClock();
-    // Executa imediatamente as atualizações de API controladas pelos outros scripts
     if (typeof initWeather === "function") initWeather();
-    if (typeof initNews === "function") initNews();
 });
 
 function initClock() {
     updateClockAndGreeting();
-    // Atualiza estritamente a cada 1 segundo para precisão do relógio da TV
     setInterval(updateClockAndGreeting, 1000);
 }
 
 function updateClockAndGreeting() {
     const now = new Date();
     
-    // 1. Relógio no Formato 24h sem segundos
+    // 1. Relógio no Formato 24h
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     document.getElementById("clock").textContent = hours + ":" + minutes;
 
-    // 2. Data Elegante Automação (Ex: SEGUNDA • 06 JUL 2026)
+    // 2. Data Elegante
     const daysOfWeek = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
     const months = ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"];
     
@@ -33,7 +30,7 @@ function updateClockAndGreeting() {
 
     document.getElementById("date").textContent = dayName + " • " + dayOfMonth + " " + monthName + " " + year;
 
-    // 3. Saudação Dinâmica por Horário
+    // 3. Saudação Dinâmica
     const currentHour = now.getHours();
     let greetingText = "BOA NOITE";
 

@@ -1,1 +1,181 @@
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:#f5f5f3;overflow:hidden}header{height:82px;background:#fff;display:grid;grid-template-columns:2.2fr 1fr 1.2fr .8fr .8fr;align-items:center;padding:0 36px;border-bottom:3px solid #c6a36b;box-shadow:0 2px 8px rgba(0,0,0,.05)}.title{font-size:30px;font-weight:700;color:#435043}.sub{font-size:13px;color:#888}#saudacao{font-size:24px;font-weight:600;color:#435043}#data{font-size:18px;color:#666}#hora{text-align:center;font-size:42px;font-weight:700}#clima{text-align:right;font-size:24px}iframe{width:100%;height:calc(100vh - 82px);border:none}
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS (Otimizado para Widescreen 1920x1080)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F7F7F5; /* Off-white de fundo */
+    color: #676767; /* Cinza corporativo */
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 150px 1fr 35px; /* Alturas exatas e estáticas para TV */
+}
+
+/* ==========================================================================
+   CABEÇALHO (Estilo Premium AAA)
+   ========================================================================== */
+.app-header {
+    background-color: #FFFFFF;
+    border-bottom: 3px solid #C9A66B; /* Linha inferior dourada */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Sombra extremamente discreta */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 10;
+}
+
+/* Lado Esquerdo: Identificação */
+.header-left h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #445245; /* Verde sofisticado */
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+.header-left p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #676767;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Centro: Saudação dinamicamente gerada */
+.header-center {
+    font-size: 24px;
+    font-weight: 300;
+    color: #676767;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Lado Direito: Data, Hora e Clima */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.datetime-container {
+    text-align: right;
+}
+
+#clock {
+    font-size: 42px;
+    font-weight: 600;
+    color: #445245;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+#date {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #676767;
+}
+
+/* Clima e Previsão */
+.weather-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-left: 1px solid #EAEAEA;
+    padding-left: 25px;
+}
+
+#current-weather {
+    font-size: 32px;
+    font-weight: 300;
+    color: #445245;
+    white-space: nowrap;
+}
+
+#forecast {
+    display: flex;
+    gap: 15px;
+}
+
+.forecast-day {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.forecast-day .day-name {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #C9A66B; /* Dourado para os dias da previsão */
+}
+
+.forecast-day .day-temps {
+    font-weight: 400;
+    color: #676767;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   CORPO DO PAINEL (Iframe Google Slides)
+   ========================================================================== */
+.app-main {
+    width: 100%;
+    height: 100%;
+    background-color: #F7F7F5;
+}
+
+.app-main iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* ==========================================================================
+   RODAPÉ (Ticker Discreto de Notícias contínuas)
+   ========================================================================== */
+.app-footer {
+    background-color: #FFFFFF;
+    border-top: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 35px;
+}
+
+.ticker-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+#ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    color: #676767;
+    letter-spacing: 0.5px;
+    animation: ticker-scroll 35s linear infinite;
+}
+
+/* Animação CSS pura e leve para TVs antigas */
+@keyframes ticker-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}

@@ -1,1 +1,59 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><header><div class="brand"><div class="title">PEDRA GRANDE</div><div class="sub">Av. Nove de Julho, 5143 • Itaim Bibi</div></div><div id="saudacao"></div><div id="data"></div><div id="hora"></div><div id="clima">⛅ --°C</div></header><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSM8czw_bx_peKyOWMJ5-TYqvQE4UE2LkspcJCmZlv-dW6isV5-7mxwrI08-eVfy99IYStwq0wYW_ft/embed?start=true&loop=true&delayms=15000"></iframe><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Recepção - Pedra Grande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="viewport">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-left">
+            <h1>PEDRA GRANDE</h1>
+            <p>Av. Nove de Julho, 5143 • Itaim Bibi</p>
+        </div>
+        
+        <div class="header-center">
+            <span id="greeting">Olá</span>
+        </div>
+        
+        <div class="header-right">
+            <div class="datetime-container">
+                <div id="clock">00:00</div>
+                <div id="date">SEGUNDA • 01 JAN 2026</div>
+            </div>
+            <div class="weather-container">
+                <div id="current-weather">--°C</div>
+                <div id="forecast">
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <iframe 
+            src="https://docs.google.com/presentation/d/e/2PACX-1vSM8czw_bx_peKyOWMJ5-TYqvQE4UE2LkspcJCmZlv-dW6isV5-7mxwrI08-eVfy99IYStwq0wYW_ft/embed?start=true&loop=true&delayms=15000" 
+            frameborder="0" 
+            allowfullscreen="true" 
+            mozallowfullscreen="true" 
+            webkitallowfullscreen="true">
+        </iframe>
+    </main>
+
+    <footer class="app-footer">
+        <div class="ticker-wrapper">
+            <div id="ticker-content" class="ticker-transition">
+                Carregando informativos...
+            </div>
+        </div>
+    </footer>
+
+    <script src="weather.js"></script>
+    <script src="news.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
